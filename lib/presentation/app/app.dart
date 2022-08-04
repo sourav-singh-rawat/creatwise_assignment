@@ -11,7 +11,6 @@ class CWApp extends ConsumerWidget {
     final currentTheme = ref.watch(CWAppX.theme.current);
 
     return MaterialApp(
-      navigatorKey: CWAppX.router.navigatorKey,
       debugShowCheckedModeBanner: false,
       color: currentTheme.colors.primary,
       // theme: ThemeData(
