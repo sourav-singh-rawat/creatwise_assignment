@@ -1,0 +1,1 @@
+const cwAppTitle = "CredWise Switcher";

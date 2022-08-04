@@ -5,6 +5,9 @@ part of '../amenities.dart';
 final rectangleAmenityImplStateProvider = StateNotifierProvider<_RectangleAmenityImplStateController, _RectangleState>(
   (ref) {
     final stateController = _RectangleAmenityImplStateController();
+
+    stateController.initState();
+
     return stateController;
   },
 );
@@ -36,6 +39,12 @@ class _RectangleState {
 
 class _RectangleAmenityImplStateController extends StateNotifier<_RectangleState> implements FigureAmenity {
   _RectangleAmenityImplStateController() : super(_RectangleState.initState());
+
+  void initState() {
+    CWAppX.globalProviderScope.listen<CWThemeState>(CWAppX.theme.current, (previous, next) {
+      onColorChanged(next.colors.secoundary);
+    });
+  }
 
   @override
   Color get color => state.color;

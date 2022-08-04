@@ -5,6 +5,9 @@ part of '../amenities.dart';
 final squareAmenityImplStateProvider = StateNotifierProvider<_SquareAmenityImplStateController, _SquareState>(
   (ref) {
     final stateController = _SquareAmenityImplStateController();
+
+    stateController.initState();
+
     return stateController;
   },
 );
@@ -36,6 +39,12 @@ class _SquareState {
 
 class _SquareAmenityImplStateController extends StateNotifier<_SquareState> implements FigureAmenity {
   _SquareAmenityImplStateController() : super(_SquareState.initState());
+
+  void initState() {
+    CWAppX.globalProviderScope.listen<CWThemeState>(CWAppX.theme.current, (previous, next) {
+      onColorChanged(next.colors.secoundary);
+    });
+  }
 
   @override
   Color get color => state.color;

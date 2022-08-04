@@ -5,6 +5,7 @@ part of '../amenities.dart';
 final circleAmenityImplStateProvider = StateNotifierProvider<_CircleAmenityImplStateController, _CircleState>(
   (ref) {
     final stateController = _CircleAmenityImplStateController();
+    stateController.initState();
     return stateController;
   },
 );
@@ -36,6 +37,12 @@ class _CircleState {
 
 class _CircleAmenityImplStateController extends StateNotifier<_CircleState> implements FigureAmenity {
   _CircleAmenityImplStateController() : super(_CircleState.initState());
+
+  void initState() {
+    CWAppX.globalProviderScope.listen<CWThemeState>(CWAppX.theme.current, (previous, next) {
+      onColorChanged(next.colors.secoundary);
+    });
+  }
 
   @override
   Color get color => state.color;

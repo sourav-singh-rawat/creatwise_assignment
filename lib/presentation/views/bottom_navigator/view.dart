@@ -1,3 +1,4 @@
+import 'package:creatwise_assignment/contants/constants.dart';
 import 'package:creatwise_assignment/data/amenities.dart';
 import 'package:creatwise_assignment/presentation/app/app_extensions/app_extensions.dart';
 import 'package:creatwise_assignment/presentation/app/core_widgets/app_bar.dart';
@@ -26,7 +27,7 @@ class CWBottomNavigator extends ConsumerWidget {
       child: CWScaffold(
         appBar: CWAppBar(
           title: Text(
-            'CredWise Switcher',
+            cwAppTitle,
             style: TextStyle(
               color: currentTheme.colors.secoundary,
             ),
@@ -43,7 +44,6 @@ class CWBottomNavigator extends ConsumerWidget {
             ),
           ],
         ),
-        // backgroundColor: currentTheme.colors.secoundary,
         body: Column(
           children: [
             Expanded(
