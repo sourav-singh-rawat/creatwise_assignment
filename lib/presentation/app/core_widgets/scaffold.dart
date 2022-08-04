@@ -5,20 +5,20 @@ class CWScaffold extends ConsumerWidget {
   final PreferredSizeWidget? appBar;
   final Widget? bottomNavigationBar;
   final Widget? body;
-  final Color? backgroudColor;
+  final Color? backgroundColor;
 
   const CWScaffold({
     Key? key,
     this.appBar,
     this.bottomNavigationBar,
     this.body,
-    this.backgroudColor,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      backgroundColor: backgroudColor,
+      backgroundColor: backgroundColor,
       appBar: appBar,
       body: body,
       bottomNavigationBar: bottomNavigationBar,
