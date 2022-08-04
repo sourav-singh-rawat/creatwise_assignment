@@ -12,20 +12,22 @@ class CWApp extends ConsumerWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      color: currentTheme.colors.primary,
-      // theme: ThemeData(
-      // brightness: currentTheme.type == CWThemeType.dark ? Brightness.dark : Brightness.light,
-      // scaffoldBackgroundColor: currentTheme.colors.primary,
-      // primaryColor: currentTheme.colors.primary,
-      // bottomNavigationBarTheme: Theme.of(context).bottomNavigationBarTheme.copyWith(
-      //     // sets the background color of the `BottomNavigationBar`
-      //     canvasColor: Colors.green,
-      //     // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-      //     primaryColor: Colors.red,
-      //     textTheme: Theme.of(context)
-      //         .textTheme
-      //         .copyWith(caption: new TextStyle(color: Colors.yellow))),
-      // ),
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: currentTheme.colors.primary,
+          iconTheme: IconThemeData(
+            color: currentTheme.colors.secoundary,
+          ),
+        ),
+        scaffoldBackgroundColor: currentTheme.colors.primary,
+        iconTheme: IconThemeData(
+          color: currentTheme.colors.secoundary,
+        ),
+        bottomNavigationBarTheme: Theme.of(context).bottomNavigationBarTheme.copyWith(
+              backgroundColor: currentTheme.colors.primary,
+              selectedItemColor: currentTheme.colors.secoundary,
+            ),
+      ),
       home: const CWBottomNavigator(),
     );
   }

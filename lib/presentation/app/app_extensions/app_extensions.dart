@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-part './router/router.dart';
 part './settings/app_settings.dart';
 part './settings/theme/policies/colors/colors.dart';
 part './settings/theme/policies/colors/dark.dart';

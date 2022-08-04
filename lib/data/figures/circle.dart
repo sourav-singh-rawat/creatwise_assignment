@@ -15,10 +15,9 @@ class _CircleState {
     required this.radius,
   });
 
-  //TODO: on theme
   _CircleState.initState()
       : this(
-          color: Colors.black,
+          color: CWAppX.globalProviderScope.read(CWAppX.theme.current).colors.secoundary,
           radius: 70,
         );
 

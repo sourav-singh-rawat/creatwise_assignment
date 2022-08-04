@@ -37,10 +37,17 @@ class _VSController extends StateNotifier<_ViewState> {
     );
   }
 
-  void onThemeChanged(CWThemeType currentThemeType) {
-    //TODO: access by context
+  void onThemeChanged() {
+    final currentThemeType = CWAppX.globalProviderScope.read(CWAppX.theme.current).type;
+
     final newTheme = currentThemeType == CWThemeType.dark ? CWThemeType.light : CWThemeType.dark;
 
     CWAppX.theme.switchTo(newTheme);
+  }
+
+  @override
+  // ignore: must_call_super
+  void dispose() {
+    CWAppX.globalProviderScope.dispose();
   }
 }

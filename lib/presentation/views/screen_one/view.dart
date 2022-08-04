@@ -10,8 +10,10 @@ class ScreenOne extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final circle = ref.watch(FigureAmenity.circle);
     final circleController = ref.read(FigureAmenity.circle.notifier);
+
     final square = ref.watch(FigureAmenity.square);
     final squareController = ref.read(FigureAmenity.square.notifier);
+
     final rectangle = ref.watch(FigureAmenity.rectangle);
     final rectangleController = ref.read(FigureAmenity.rectangle.notifier);
 
