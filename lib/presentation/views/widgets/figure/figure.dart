@@ -1,11 +1,11 @@
 import 'dart:math';
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 part 'circle.dart';
-part 'square.dart';
 part 'rectangle.dart';
+part 'square.dart';
 
 class FigureModifier extends ConsumerWidget {
   final Widget figure;
@@ -35,26 +35,18 @@ class FigureModifier extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return GestureDetector(
-      onTap: () {
-        onColorUpdate?.call(_randomColorGenrator());
+    return InteractiveViewer(
+      onInteractionUpdate: (details) {
+        onSizeUpdate?.call(
+          Size(details.horizontalScale * 100, details.verticalScale * 100),
+        );
       },
-      child: figure,
+      child: GestureDetector(
+        onTap: () {
+          onColorUpdate?.call(_randomColorGenrator());
+        },
+        child: figure,
+      ),
     );
-    // return InteractiveViewer(
-    //   constrained: false,
-    //   onInteractionUpdate: (details) {
-    //     onSizeUpdate?.call(Size(details.horizontalScale * 100, details.verticalScale * 100));
-    //   },
-    //   boundaryMargin: const EdgeInsets.all(20.0),
-    //   maxScale: 6,
-    //   minScale: 0.3,
-    //   child: GestureDetector(
-    //     onTap: () {
-    //       onColorUpdate?.call(_randomColorGenrator());
-    //     },
-    //     child: figure,
-    //   ),
-    // );
   }
 }
