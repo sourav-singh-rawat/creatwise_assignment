@@ -1,7 +1,6 @@
 part of './view.dart';
 
-final _vsProvider =
-    StateNotifierProvider.autoDispose<_VSController, _ViewState>(
+final _vsProvider = StateNotifierProvider.autoDispose<_VSController, _ViewState>(
   (ref) {
     final stateController = _VSController();
     return stateController;
@@ -40,9 +39,7 @@ class _VSController extends StateNotifier<_ViewState> {
 
   void onThemeChanged(CWThemeType currentThemeType) {
     //TODO: access by context
-    final newTheme = currentThemeType == CWThemeType.dark
-        ? CWThemeType.light
-        : CWThemeType.dark;
+    final newTheme = currentThemeType == CWThemeType.dark ? CWThemeType.light : CWThemeType.dark;
 
     CWAppX.theme.switchTo(newTheme);
   }

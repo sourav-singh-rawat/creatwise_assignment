@@ -28,13 +28,10 @@ class CWBottomNavigator extends ConsumerWidget {
               icon: Transform.rotate(
                 angle: 10,
                 child: Icon(
-                  currentTheme.type == CWThemeType.dark
-                      ? Icons.sunny
-                      : Icons.nightlight_sharp,
+                  currentTheme.type == CWThemeType.dark ? Icons.sunny : Icons.nightlight_sharp,
                 ),
               ),
-              onPressed: () =>
-                  stateController.onThemeChanged(currentTheme.type),
+              onPressed: () => stateController.onThemeChanged(currentTheme.type),
             ),
           ],
         ),

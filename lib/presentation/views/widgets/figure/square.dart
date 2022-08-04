@@ -33,8 +33,7 @@ class _SquarePainter extends CustomPainter {
       ..color = color
       ..style = PaintingStyle.fill;
 
-    final centerPositionOffset = Offset(
-        canvasSize.width / 2 - size / 2, canvasSize.height / 2 - size / 2);
+    final centerPositionOffset = Offset(canvasSize.width / 2 - size / 2, canvasSize.height / 2 - size / 2);
 
     canvas.drawRect(centerPositionOffset & Size(size, size), paint1);
   }

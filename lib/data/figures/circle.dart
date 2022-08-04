@@ -1,7 +1,6 @@
 part of '../amenities.dart';
 
-final circleAmenityImplStateProvider =
-    StateNotifierProvider<_CircleAmenityImplStateController, _CircleState>(
+final circleAmenityImplStateProvider = StateNotifierProvider<_CircleAmenityImplStateController, _CircleState>(
   (ref) {
     final stateController = _CircleAmenityImplStateController();
     return stateController;
@@ -34,8 +33,7 @@ class _CircleState {
   }
 }
 
-class _CircleAmenityImplStateController extends StateNotifier<_CircleState>
-    implements FigureAmenity {
+class _CircleAmenityImplStateController extends StateNotifier<_CircleState> implements FigureAmenity {
   _CircleAmenityImplStateController() : super(_CircleState.initState());
 
   @override
