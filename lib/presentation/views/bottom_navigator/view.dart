@@ -20,7 +20,7 @@ class CWBottomNavigator extends ConsumerWidget {
     final stateController = ref.read(_vsProvider.notifier);
 
     return SafeArea(
-      child: CWSacffold(
+      child: CWScaffold(
         // backgroundColor: currentTheme.colors.secoundary,
         body: screens[state.currentIndex],
         bottomNavigationBar: Theme(

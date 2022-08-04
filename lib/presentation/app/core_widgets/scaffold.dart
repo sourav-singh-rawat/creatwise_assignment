@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CWSacffold extends ConsumerWidget {
+class CWScaffold extends ConsumerWidget {
   final PreferredSizeWidget? appBar;
   final Widget? bottomNavigationBar;
   final Widget? body;
   final Color? backgroudColor;
 
-  const CWSacffold({
+  const CWScaffold({
     Key? key,
     this.appBar,
     this.bottomNavigationBar,
