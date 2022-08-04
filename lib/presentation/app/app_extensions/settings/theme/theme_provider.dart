@@ -16,8 +16,8 @@ class CWThemeState {
 
   CWThemeState.defaults()
       : this(
-          type: CWThemeType.dark,
-          colors: CWThemeColors.dark(),
+          type: CWThemeType.yellow,
+          colors: CWThemeColors.yellow(),
         );
 
   CWThemeState copyWith({
@@ -37,7 +37,7 @@ class CWThemeStateNotifier extends StateNotifier<CWThemeState> {
   void switchTo(CWThemeType type) {
     state = CWThemeState.defaults().copyWith(
       type: type,
-      colors: type == CWThemeType.dark ? CWThemeColors.dark() : CWThemeColors.light(),
+      colors: type == CWThemeType.yellow ? CWThemeColors.yellow() : CWThemeColors.blue(),
     );
   }
 }

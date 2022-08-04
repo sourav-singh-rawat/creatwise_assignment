@@ -40,7 +40,7 @@ class _VSController extends StateNotifier<_ViewState> {
   void onThemeChanged() {
     final currentThemeType = CWAppX.globalProviderScope.read(CWAppX.theme.current).type;
 
-    final newTheme = currentThemeType == CWThemeType.dark ? CWThemeType.light : CWThemeType.dark;
+    final newTheme = currentThemeType == CWThemeType.yellow ? CWThemeType.blue : CWThemeType.yellow;
 
     CWAppX.theme.switchTo(newTheme);
   }

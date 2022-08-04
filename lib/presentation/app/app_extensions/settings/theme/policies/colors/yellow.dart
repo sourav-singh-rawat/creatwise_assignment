@@ -1,6 +1,6 @@
 part of '../../../../app_extensions.dart';
 
-class _CWThemeColorsDarkImpl implements CWThemeColors {
+class _CWThemeColorsYellowImpl implements CWThemeColors {
   @override
   Color get primary => Colors.yellow;
 

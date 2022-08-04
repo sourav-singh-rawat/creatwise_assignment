@@ -1,6 +1,6 @@
 part of '../../app_extensions.dart';
 
-enum CWThemeType { dark, light }
+enum CWThemeType { yellow, blue }
 
 class CWThemeSetting extends CWAppSetting<AutoDisposeStateNotifierProvider<CWThemeStateNotifier, CWThemeState>, CWThemeType> {
   CWThemeSetting._();

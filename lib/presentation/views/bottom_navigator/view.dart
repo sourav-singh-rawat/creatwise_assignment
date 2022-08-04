@@ -1,5 +1,4 @@
 import 'package:creatwise_assignment/contants/constants.dart';
-import 'package:creatwise_assignment/data/amenities.dart';
 import 'package:creatwise_assignment/presentation/app/app_extensions/app_extensions.dart';
 import 'package:creatwise_assignment/presentation/app/core_widgets/app_bar.dart';
 import 'package:creatwise_assignment/presentation/app/core_widgets/scaffold.dart';
@@ -37,7 +36,7 @@ class CWBottomNavigator extends ConsumerWidget {
               icon: Transform.rotate(
                 angle: 10,
                 child: Icon(
-                  currentTheme.type == CWThemeType.dark ? Icons.sunny : Icons.nightlight_sharp,
+                  currentTheme.type == CWThemeType.yellow ? Icons.sunny : Icons.nightlight_sharp,
                 ),
               ),
               onPressed: stateController.onThemeChanged,
