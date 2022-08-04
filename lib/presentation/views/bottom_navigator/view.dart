@@ -75,9 +75,6 @@ class CWBottomNavigator extends ConsumerWidget {
           ],
           currentIndex: state.currentIndex,
           onTap: stateController.onIndexChanged,
-          // backgroundColor: currentTheme.colors.primary,
-          selectedItemColor: currentTheme.colors.secoundary,
-          // unselectedItemColor: currentTheme.colors.primary,
         ),
       ),
     );
