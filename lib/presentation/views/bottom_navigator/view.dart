@@ -1,4 +1,5 @@
 import 'package:creatwise_assignment/presentation/app/app_extensions/app_extensions.dart';
+import 'package:creatwise_assignment/presentation/app/core_widgets/app_bar.dart';
 import 'package:creatwise_assignment/presentation/app/core_widgets/scaffold.dart';
 import 'package:creatwise_assignment/presentation/views/screen_one/view.dart';
 import 'package:creatwise_assignment/presentation/views/screen_three/view.dart';
@@ -21,6 +22,22 @@ class CWBottomNavigator extends ConsumerWidget {
 
     return SafeArea(
       child: CWScaffold(
+        appBar: CWAppBar(
+          actions: [
+            IconButton(
+              icon: Transform.rotate(
+                angle: 10,
+                child: Icon(
+                  currentTheme.type == CWThemeType.dark
+                      ? Icons.sunny
+                      : Icons.nightlight_sharp,
+                ),
+              ),
+              onPressed: () =>
+                  stateController.onThemeChanged(currentTheme.type),
+            ),
+          ],
+        ),
         // backgroundColor: currentTheme.colors.secoundary,
         body: screens[state.currentIndex],
         bottomNavigationBar: Theme(

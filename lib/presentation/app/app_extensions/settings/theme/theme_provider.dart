@@ -1,6 +1,8 @@
 part of '../../app_extensions.dart';
 
-final _themeProvider = StateNotifierProvider.autoDispose<CWThemeStateNotifier, CWThemeState>((ref) {
+final _themeProvider =
+    StateNotifierProvider.autoDispose<CWThemeStateNotifier, CWThemeState>(
+        (ref) {
   return CWThemeStateNotifier();
 });
 
@@ -16,8 +18,8 @@ class CWThemeState {
 
   CWThemeState.defaults()
       : this(
-          type: CWThemeType.light,
-          colors: CWThemeColors.light(),
+          type: CWThemeType.dark,
+          colors: CWThemeColors.dark(),
         );
 
   CWThemeState copyWith({
@@ -32,12 +34,15 @@ class CWThemeState {
 }
 
 class CWThemeStateNotifier extends StateNotifier<CWThemeState> {
-  CWThemeStateNotifier([CWThemeState? initState]) : super(initState ?? CWThemeState.defaults());
+  CWThemeStateNotifier([CWThemeState? initState])
+      : super(initState ?? CWThemeState.defaults());
 
   void switchTo(CWThemeType type) {
     state = CWThemeState.defaults().copyWith(
       type: type,
-      colors: type == CWThemeType.dark ? CWThemeColors.dark() : CWThemeColors.light(),
+      colors: type == CWThemeType.dark
+          ? CWThemeColors.dark()
+          : CWThemeColors.light(),
     );
   }
 }
