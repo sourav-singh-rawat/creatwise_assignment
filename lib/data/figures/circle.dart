@@ -1,5 +1,7 @@
 part of '../amenities.dart';
 
+//Can add one more wrapper over it, if not want to expose provider like we did for theme
+
 final circleAmenityImplStateProvider = StateNotifierProvider<_CircleAmenityImplStateController, _CircleState>(
   (ref) {
     final stateController = _CircleAmenityImplStateController();

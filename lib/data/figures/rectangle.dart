@@ -1,5 +1,7 @@
 part of '../amenities.dart';
 
+//Can add one more wrapper over it, if not want to expose provider like we did for theme
+
 final rectangleAmenityImplStateProvider = StateNotifierProvider<_RectangleAmenityImplStateController, _RectangleState>(
   (ref) {
     final stateController = _RectangleAmenityImplStateController();

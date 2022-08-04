@@ -1,5 +1,7 @@
 part of '../amenities.dart';
 
+//Can add one more wrapper over it, if not want to expose provider like we did for theme
+
 final squareAmenityImplStateProvider = StateNotifierProvider<_SquareAmenityImplStateController, _SquareState>(
   (ref) {
     final stateController = _SquareAmenityImplStateController();
