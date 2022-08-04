@@ -22,6 +22,7 @@ class CWSacffold extends ConsumerWidget {
       appBar: appBar,
       body: body,
       bottomNavigationBar: bottomNavigationBar,
+      resizeToAvoidBottomInset: false,
     );
   }
 }
