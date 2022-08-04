@@ -19,9 +19,9 @@ class FigureModifier extends ConsumerWidget {
   }) : super(key: key);
 
   Color _randomColorGenrator() {
-    final randomValue1 = Random().nextInt(99);
-    final randomValue2 = Random().nextInt(99);
-    final randomValue3 = Random().nextInt(99);
+    final randomValue1 = Random().nextInt(255);
+    final randomValue2 = Random().nextInt(255);
+    final randomValue3 = Random().nextInt(255);
 
     final genratedColor = Color.fromRGBO(
       randomValue1,

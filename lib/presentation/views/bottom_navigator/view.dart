@@ -1,3 +1,4 @@
+import 'package:creatwise_assignment/data/amenities.dart';
 import 'package:creatwise_assignment/presentation/app/app_extensions/app_extensions.dart';
 import 'package:creatwise_assignment/presentation/app/core_widgets/app_bar.dart';
 import 'package:creatwise_assignment/presentation/app/core_widgets/scaffold.dart';
@@ -43,7 +44,20 @@ class CWBottomNavigator extends ConsumerWidget {
           ],
         ),
         // backgroundColor: currentTheme.colors.secoundary,
-        body: screens[state.currentIndex],
+        body: Column(
+          children: [
+            Expanded(
+              child: screens[state.currentIndex],
+            ),
+            Text(
+              'Tap on shape to change color',
+              style: TextStyle(
+                color: currentTheme.colors.secoundary,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
